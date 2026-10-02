@@ -13,6 +13,7 @@ import { AboutPage } from "./Pages/About";
 import Sider from "antd/es/layout/Sider";
 import { useState } from "react";
 import { CityPage } from "./Pages/City";
+import { Analytics } from "@vercel/analytics/react";
 
 const { Content, Footer } = Layout;
 
@@ -136,7 +137,12 @@ function App() {
     },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <RouterProvider router={router} />
+      <Analytics />
+    </>
+  );
 }
 
 export default App;
